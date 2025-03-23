@@ -1,29 +1,3 @@
-/*
-
-Objective:
-You will practice creating and combining boolean expressions
-to drive logic and outcomes in you program.
-
-Instructions:
-If you are not familiar with the concept of a text-based adventure game,
-let's set the scene...
-Example: "You wake up in a dark forest. There are two paths ahead of you:
-one leading to the mountains and one to a village.
-Your choices will determine your fate!"
-
-Define the Requirements: You must:
-  - Write conditional statements to handle player choices.
-  - Use boolean expressions to combine multiple conditions.
-  - Include at least one use of logical operators (&&, ||, !).
-
-Starter Code:
-  - Run the following command in your terminal to install the readline-sync module:
-    npm install readline-sync
-
-Paste the following code into your editor:
-
-*/
-
 const readline = require('readline-sync');
 
 const hasTorch = true;
@@ -41,12 +15,23 @@ if (choice === "mountains" && hasTorch) {
 } else {
   console.log("You get lost and wander aimlessly.");
 }
-
-/* 
-
-Add Customization and expand the game:
-  - Add more choices and scenarios.
-  - Include additional items (e.g., a sword, a compass).
-  - Use nested conditionals and logical operators to create complex outcomes.
-
-*/
+if (choice === "mountains" && hasTorch) {
+  console.log("As you exit the dark mountains you encounter a skeleton laying against the rocks.");
+ } const choiceTwo = readline.question("Do you want to investigate?\(Yes/No\)")
+ if (choice === "mountains" && choiceTwo === "Yes" && hasTorch) {
+    let hasSword = true;
+    console.log("You find a sword in the skeletons hand and take it with you.");
+ }  else if (choice === "mountains" && choiceTwo === "No" && hasTorch) {
+  let hasSword = false;
+  console.log("You leave the skeleton and head to the nearby forest.");
+}
+else if (choice === "village" && hasTorch) {
+  console.log("As you enter the town you notice a goblin merchant with a sign that says \"Free Samples\".");
+} const choiceThree = readline.question("Do you want to speak with the merchant?\(Yes/No\)")
+  if (choice === "village" && choiceThree === "Yes") {
+    let hasHealthPotion = true;
+    console.log("The goblin merchant greets you excitedly and tells you about his wares. At the end of his demonstration he hands you a health potion.")
+} else if (choice === "village" && choiceThree === "No") {
+  let hasHealthPotion = false;
+  console.log("You decide you don't have time for the free samples. Maybe some other time");
+}
